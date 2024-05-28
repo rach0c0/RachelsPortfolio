@@ -1,38 +1,188 @@
-.App {
-  text-align: center;
+@-ms-viewport{width: device-width; height: device-height;}
+/*
+================================================================================
+PRIMARY STYLES
+================================================================================*/
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  /*  border: solid 1px rgba(0, 0, 0, 0); */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+    background-color: rgb(35, 54, 32);
+   /* background: url(images/wall.png); */
+    height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.name {
+    text-align: center;
+    font-weight:bold;
+    text-wrap: nowrap;
+    font-size: 3vw;
+    color: white;
+    border-bottom: solid 15px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/*
+footer {  
+   background: url(images/wall-bottom.png) bottom repeat-x;
+   position: absolute bottom;
+   bottom: 0;
+}
+
+.closeNote {
+   color:grey;
+   text-align: center; 
+}
+
+div {
+  border: solid .5px grey;
+} */
+
+/*====================================
+  image grid 
+======================================*/
+.LI-LinkContainer {
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 3;
+  grid-row-end: 5;
+}
+
+.headshotContainer {
+  grid-column-start: 3;
+  grid-column-end: 6;
+  grid-row-start: 6;
+  grid-row-end: 9;
+}
+
+.bioContainer {
+  grid-column-start: 7;
+  grid-column-end: 12;
+  grid-row-start: 2;
+  grid-row-end: 9;
+}
+
+.skillList-container {
+  grid-column-start: 2;
+  grid-column-end: 10;
+  grid-row-start: 10;
+  grid-row-end: 12;
+}
+
+.titleContainer {
+  grid-column-start: 16;
+  grid-column-end: 24;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.GH-LinkContainer {
+  grid-column-start: 12;
+  grid-column-end: 14;
+  grid-row-start: 10;
+  grid-row-end: 12;
+}
+
+.project1-container {
+  grid-column-start: 14;
+  grid-column-end: 18;
+  grid-row-start: 5;
+  grid-row-end: 9;
+}
+
+.project2-container {
+  grid-column-start: 19;
+  grid-column-end: 23;
+  grid-row-start: 4;
+  grid-row-end: 7;
+}
+
+.project3-container {
+  grid-column-start: 19;
+  grid-column-end: 23;
+  grid-row-start: 8;
+  grid-row-end: 11;
+}
+
+
+/*====================================
+Framed picture wall collage effect 
+======================================*/
+
+.image-frame {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100%; 
+  height: 100%;
+  overflow: hidden;
+  border: solid 10px rgb(208, 218, 213); 
+ /*   background: white; */
+    box-shadow: #001a08c9 0px 10px 36px 0px, #06290f7a 10px 20px 20px 15px;
 }
 
-.App-link {
-  color: #61dafb;
+.roundedImage-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: solid 10px rgb(208, 218, 213);;
+/*  background: linear-gradient(#f0eeea, #8e8f8e); */
+    box-shadow: #001a08c9 0px 10px 36px 0px, #06290f7a 10px 20px 20px 15px;
+    border-radius: 50%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.gitHubLinkImage, .headshotImage, .thumbnail2 {
+    border-radius: 50%;
+}
+
+.LinkedinLinkImage, .headshotImage, .bioImage, .gitHubLinkImage, .thumbnail1, .thumbnail2, .thumbnail3 {
+  width: 100%; 
+/*  height: 100%; */
+  object-fit: contain;
+  overflow: hidden;
+}
+
+.skillList-frame {
+    background-color: white;
+    border: outset 10px;
+    border-image: linear-gradient(#f0eeea, #8e8f8e) 30;
+  /*  width: fit-content; */
+    box-shadow: #001a08c9 0px 10px 36px 0px, #06290f7a 10px 20px 20px 15px;
+}
+
+.skillList {
+    color: black;
+}
+
+/* ==================================
+Thumbnail Image Hover effects 
+=====================================*/
+
+.thumbnail1-frame .thumbnail1{
+    transform-origin: center;
+    transition: transform 0.4s ease-in-out;
+}
+
+.thumbnail1:hover {
+    color: #28666e;
+    box-shadow: #00000029 0px 10px 36px 0px, #0000000f 0px 0px 0px 1px;
+}
+
+.thumnail-frame .thumbnail1:hover {
+    transform: scale(1.1);
+}
+
+.linkName {
+  display: none;
+    color: white;
+    position: absolute;
 }
